@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8b427941.chunk.css",
+    "main.js": "/static/js/main.b3cfdd57.chunk.js",
+    "main.js.map": "/static/js/main.b3cfdd57.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5c61ba3d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5c61ba3d.js.map",
+    "static/css/2.dd5f8600.chunk.css": "/static/css/2.dd5f8600.chunk.css",
+    "static/js/2.251c5d2a.chunk.js": "/static/js/2.251c5d2a.chunk.js",
+    "static/js/2.251c5d2a.chunk.js.map": "/static/js/2.251c5d2a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.dd5f8600.chunk.css.map": "/static/css/2.dd5f8600.chunk.css.map",
+    "static/css/main.8b427941.chunk.css.map": "/static/css/main.8b427941.chunk.css.map",
+    "static/js/2.251c5d2a.chunk.js.LICENSE.txt": "/static/js/2.251c5d2a.chunk.js.LICENSE.txt",
+    "static/media/all.min.css": "/static/media/fa-solid-900.f4f93856.woff",
+    "static/media/face-3.jpg": "/static/media/face-3.62232de2.jpg",
+    "static/media/light-bootstrap-dashboard-react.scss?v=2.0.0": "/static/media/nucleo-icons.e8827b8a.svg",
+    "static/media/photo-1431578500526-4d9613015464.jpeg": "/static/media/photo-1431578500526-4d9613015464.0c528dc7.jpeg",
+    "static/media/reactlogo.png": "/static/media/reactlogo.55f6660b.png",
+    "static/media/sidebar-3.9992d0ce.jpg": "/static/media/sidebar-3.9992d0ce.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5c61ba3d.js",
+    "static/css/2.dd5f8600.chunk.css",
+    "static/js/2.251c5d2a.chunk.js",
+    "static/css/main.8b427941.chunk.css",
+    "static/js/main.b3cfdd57.chunk.js"
+  ]
+}

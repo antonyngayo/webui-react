@@ -21,11 +21,11 @@ import {
 
 function Dashboard() {
   const [state, setState] = useState([]);
-  let term = "empty";
+  let term = " ";
   const handleSearch = event => {
     event.preventDefault();
     term = event.target.value;
-      fetch("https://dashboard.novum.co.ke/search/"+term)
+      fetch("https://dashboard.novum.co.ke/api/search/"+term)
       .then(response => response.json())
       .then(data => {
         setState(data)
