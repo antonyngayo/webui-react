@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ChartistGraph from "react-chartist";
 // react-bootstrap components
 import {
@@ -20,8 +20,11 @@ import {
 
 
 function Dashboard() {
+
   const [state, setState] = useState([]);
+  const [queue, setQueue] = useState([]);
   let term = " ";
+  // creating a setTimeout function that will be calling the enqueued enpoint every 30s
   const handleSearch = event => {
     event.preventDefault();
     term = event.target.value;
@@ -35,6 +38,20 @@ function Dashboard() {
     });
   }
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      fetch("https://dashboard.novum.co.ke/api/queue")
+      .then(response => response.json())
+      .then(data => {
+        setQueue(data)
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+    });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
 
 
   const rows = [];
@@ -44,7 +61,7 @@ function Dashboard() {
         <tr key={state[i].id}>
           <td>{state[i].id}</td>
           <td>{state[i].title}</td>
-          <td>{(state[i].convertion_status) ? "Converted" : "Enqueued"}</td>
+          <td>{(state[i].conversion_status) ? "Converted" : "in conversion queue"}</td>
           <td>{state[i].upload_time}</td>
         </tr>
       )
@@ -93,7 +110,7 @@ function Dashboard() {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Enqueued Videos</p>
-                      <Card.Title as="h4">6</Card.Title>
+                      <Card.Title as="h4">{queue.length}</Card.Title>
                     </div>
                   </Col>
                 </Row>
