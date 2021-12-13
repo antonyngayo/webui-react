@@ -1,10 +1,27 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
 
 import routes from "routes.js";
 
 function Header() {
+
+  const [queue, setQueue] = useState([]);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      fetch("https://dashboard.novum.co.ke/api/queue")
+      .then(response => response.json())
+      .then(data => {
+        setQueue(data) // setting the queue length
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+    });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+
   const location = useLocation();
   const mobileSidebarToggle = (e) => {
     e.preventDefault();
@@ -72,7 +89,7 @@ function Header() {
                 className="m-0"
               >
                 <i className="nc-icon nc-planet"></i>
-                <span className="notification">5</span>
+                <span className="notification">{queue.length}</span>
                 <span className="d-lg-none ml-1">Notification</span>
               </Dropdown.Toggle>
               <Dropdown.Menu>
